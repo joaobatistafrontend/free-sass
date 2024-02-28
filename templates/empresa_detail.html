@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ empresa.nome }}</title>
+</head>
+<body>
+    <h1>{{ empresa.nome }}</h1>
+    <p>{{ empresa.descricao }}</p>
+
+    <button type="button" class="btn btn-success" onclick="location.href='{% url 'cadastrar_profissional' empresa_slug=empresa.slug %}'">cadastrar_profissional</button>
+    <button type="button" class="btn btn-success" onclick="location.href='{% url 'cadastrar_servico' empresa_slug=empresa.slug %}'">cadastrar_servico</button>
+    <button type="button" class="btn btn-success" onclick="location.href='{% url 'cadastrar_horario_atendimento' empresa_slug=empresa.slug %}'">cadastrar_horario_atendimento</button>
+    <button type="button" class="btn btn-success" onclick="location.href='{% url 'cadastrar_mensagem_aniversario' empresa_slug=empresa.slug %}'">cadastrar_mensagem_aniversario</button>
+    <button type="button" class="btn btn-success" onclick="location.href='{% url 'cadastrar_cliente' empresa_slug=empresa.slug %}'">cadastrar_cliente</button>
+    <button type="button" class="btn btn-success" onclick="location.href='{% url 'agendamento' empresa_slug=empresa.slug %}'">cadastrar_agendamento</button>
+
+    <!-- Adicione outras informações da empresa aqui -->
+</body>
+</html>
