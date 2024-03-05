@@ -17,6 +17,11 @@ from .forms import MensagemAniversarioForm
 
 
 
+def prof(request, empresa_slug):
+    empresa = Empresa.objects.get(slug=empresa_slug)
+    profissionais = Profissional.objects.filter(empresa=empresa)
+    return render(request, 'comun/profissionais.html', {'empresa': empresa, 'profissionais': profissionais})
+
 
 def cadastrar_mensagem_aniversario(request, empresa_slug):
     empresa = Empresa.objects.get(slug=empresa_slug)
@@ -242,4 +247,4 @@ def cadastrar_profissional(request, empresa_slug):
 
 def empresa_detail(request, empresa_slug):
     empresa = Empresa.objects.get(slug=empresa_slug)
-    return render(request, 'empresa_detail.html', {'empresa': empresa})
+    return render(request, 'index.html', {'empresa': empresa})
